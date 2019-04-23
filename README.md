@@ -1,1 +1,3 @@
-# Vislice
+Jurij Vega
+Vidav
+Matija Pretnar
