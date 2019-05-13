@@ -1,3 +1,5 @@
+import random
+
 STEVILO_DOVOLJENIH_NAPAK = 10
 PRAVILNA_CRKA = '+'
 PONOVLJENA_CRKA = '0'
@@ -5,7 +7,7 @@ NAPACNA_CRKA = '-'
 ZMAGA = 'W'
 PORAZ = 'X'
 class Igra:
-    def __init__(self, geslo, crke):
+    def __init__(self, geslo, crke=[]):
         self.geslo = geslo
         self.crke = crke
 
@@ -60,10 +62,10 @@ class Igra:
                     return PORAZ
                 else:
                     return NAPACNA_CRKA
-        
-        
 
-
-
-
-        
+bazen_besed = []
+with open('besede.txt') as dat:
+    for vrstica in dat:
+        bazen_besed_append(vrstica.strip(upper))
+def nova_igra():
+    return Igra(random.choice(bazen_besed))
