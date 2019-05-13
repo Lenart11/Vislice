@@ -33,6 +33,14 @@ class Igra:
             return True
         else:
             return False
-    
+    def pravilni_del_gesla(self):
+        sez = []
+        for crka in self.crke():
+            if crka in self.pravilne_crke():
+                sez.append(crka)
+            else:
+                sez.append('_')
+        return sez
+
 
         
