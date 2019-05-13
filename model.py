@@ -44,6 +44,26 @@ class Igra:
     def nepravilni_ugibi(self):
         brez_presledkov = ''.join(self.napacne_crke())
         return brez_presledkov.split(' ')
+    def ugibaj(self, crka):
+        crka = crka.upper()
+        if crka in self.crke:
+            return PONOVLJENA_CRKA
+        else:
+            self.crke.append(crka)
+            if crka in self.pravilne_crke():
+                if self.zmaga() == True:
+                    return ZMAGA
+                else:
+                    return PRAVILNA_CRKA
+            elif crka in self.napacne_crke():
+                if self.poraz() == True:
+                    return PORAZ
+                else:
+                    return NAPACNA_CRKA
+        
+        
+
+
 
 
         
