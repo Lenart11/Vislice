@@ -66,6 +66,6 @@ class Igra:
 bazen_besed = []
 with open('besede.txt') as dat:
     for vrstica in dat:
-        bazen_besed_append(vrstica.strip(upper))
+        bazen_besed.append(vrstica.strip().upper())
 def nova_igra():
     return Igra(random.choice(bazen_besed))
