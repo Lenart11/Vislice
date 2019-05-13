@@ -41,6 +41,9 @@ class Igra:
             else:
                 sez.append('_')
         return sez
+    def nepravilni_ugibi(self):
+        brez_presledkov = ''.join(self.napacne_crke())
+        return brez_presledkov.split(' ')
 
 
         
