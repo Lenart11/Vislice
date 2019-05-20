@@ -1,4 +1,8 @@
 import bottle
 import model
 
-vislice = Vislice
+vislice = model.Vislice()
+
+@bottle.get('/')
+def index():
+    return bottle.template('index.tpl')
