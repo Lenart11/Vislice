@@ -6,12 +6,9 @@
 
   <h1>Vislice</h1>
 
-  <blockquote>
-    Vislice so najboljša igra za preganjanje dolgčasa (poleg tetrisa).
-    <small>Študentje</small>
-  </blockquote>
+ 
 
-  <img src="img/10.jpg" alt="obesanje">
+  
 
   <form action="/igra/" method="post">
     <button type="submit">Nova igra</button>
@@ -23,7 +20,7 @@
 
             <h2>{{igra.pravilni_del_gesla()}}</h2>
 
-            Nepravilni ugibi: <b>{{igra.nepravilni_ugibi}} <br>
+            Nepravilni ugibi: <b>{{igra.nepravilni_ugibi()}} <br>
         </td>
             <img src="/img/{{igra.stevilo_napak()}}.jpg" alt="obesanje" />
 
