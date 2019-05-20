@@ -18,24 +18,29 @@ class Igra:
             if crka not in self.geslo:
                 sez.append(crka)
         return sez
+
     def pravilne_crke(self):
         sez = []
         for crka in self.crke:
             if crka in self.geslo:
                 sez.append(crka)
         return sez
+
     def stevilo_napak(self):
         return len(self.napacne_crke())
+
     def zmaga(self):
         for crka in self.geslo:
             if crka not in self.crke:
                 return False
         return True
+
     def poraz(self):
         if self.stevilo_napak() == STEVILO_DOVOLJENIH_NAPAK:
             return True
         else:
             return False
+
     def pravilni_del_gesla(self):
         sez = []
         for crka in self.crke():
@@ -44,9 +49,11 @@ class Igra:
             else:
                 sez.append('_')
         return sez
+
     def nepravilni_ugibi(self):
         brez_presledkov = ''.join(self.napacne_crke())
         return brez_presledkov.split(' ')
+
     def ugibaj(self, crka):
         crka = crka.upper()
         if crka in self.crke:
@@ -81,3 +88,14 @@ class Vislice:
             return 0
         else:
             return max(self.igre.keys()) + 1
+    
+    def nova_igra(self):
+        id = self.prost_id_igre()
+        igra = nova_igra()
+        self.igre[id] = (igra, ZACETEK)
+        return id
+
+    def ugibaj(self, id, crka):
+        igra, _ = self.igra[id]
+        igra.ugibaj(crka)
+        self.igre[id] = (igra, stanje)
