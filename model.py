@@ -6,6 +6,7 @@ PONOVLJENA_CRKA = '0'
 NAPACNA_CRKA = '-'
 ZMAGA = 'W'
 PORAZ = 'X'
+ZACETEK = 'Z'
 class Igra:
     def __init__(self, geslo, crke=[]):
         self.geslo = geslo
@@ -69,3 +70,14 @@ with open('besede.txt') as dat:
         bazen_besed.append(vrstica.strip().upper())
 def nova_igra():
     return Igra(random.choice(bazen_besed))
+
+
+
+class Vislice:
+    def __init__(self):
+        self.igre = {}
+    def prost_id_igre(self):
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
