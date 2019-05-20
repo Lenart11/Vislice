@@ -72,7 +72,7 @@ class Igra:
                     return NAPACNA_CRKA
 
 bazen_besed = []
-with open('besede.txt') as dat:
+with open('besede.txt',encoding='UTF8') as dat:
     for vrstica in dat:
         bazen_besed.append(vrstica.strip().upper())
 def nova_igra():
@@ -96,6 +96,6 @@ class Vislice:
         return id
 
     def ugibaj(self, id, crka):
-        igra, _ = self.igra[id]
+        igra, _ = self.igre[id]
         igra.ugibaj(crka)
         self.igre[id] = (igra, stanje)
